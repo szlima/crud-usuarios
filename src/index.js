@@ -1,5 +1,8 @@
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './css/index.css';
 
-ReactDOM.render('Cadastro de usuários', document.getElementById('root'));
+import Principal from './Principal';
+
+ReactDOM.render(<Principal />, document.getElementById('root'));
