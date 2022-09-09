@@ -2,12 +2,14 @@ import React from 'react';
 
 import './css/Principal.css';
 
+import Cabecalho from './componentes/Cabecalho';
+
 function Principal() {
 
 
     return (
         <React.Fragment>            
-            <p>Cadastro de usuários</p>
+            <Cabecalho />
         </React.Fragment>
     );
 }
