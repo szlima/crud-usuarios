@@ -1,9 +1,13 @@
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   
-    background-color: rgb(27, 29, 32);  
-    color: rgb(156, 165, 182);
-  }
-  
+  background-color: rgb(27, 29, 32);  
+  color: rgb(156, 165, 182);
+}
+
+#root{
+  height: 100vh;
+  overflow: scroll;
+}

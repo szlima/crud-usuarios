@@ -1,0 +1,30 @@
+form{
+    border: 1px solid rgb(107, 114, 126);
+    
+    padding: 20px;
+    
+    height: 100%; 
+    overflow: scroll;
+}
+
+form input[type=text]{    
+    margin-bottom: 10px;    
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid rgb(107, 114, 126);    
+}
+
+form input:focus {
+    border: none;
+} 
+
+.col .form-label{
+    padding-left: 35px;
+}
+
+
+
+h5{
+    margin-top: 30px;
+    color: rgb(155, 190, 250);
+}
