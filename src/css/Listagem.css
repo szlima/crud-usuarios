@@ -1,0 +1,10 @@
+.listagem{
+    border: 1px solid rgb(107, 114, 126);
+    width: 50%;
+}
+
+p{
+    text-align: right;
+    padding: 10px 20px;    
+    margin: 0;
+}
