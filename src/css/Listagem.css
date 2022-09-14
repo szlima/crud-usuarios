@@ -8,3 +8,10 @@ p{
     padding: 10px 20px;    
     margin: 0;
 }
+
+.registros{
+    height: 85%;
+    overflow: scroll;
+    list-style: none;
+    padding: 0;
+}
