@@ -2,6 +2,8 @@ import React from 'react';
 
 import '../css/Listagem.css';
 
+import Registro from './Registro';
+
 function Listagem({registros}){
 
     return (
@@ -13,8 +15,7 @@ function Listagem({registros}){
             <ul className='registros'>
                 {registros.map((usuario, indice) => 
                     (<li key={indice}>
-                        <p>{usuario.name}</p>
-                        {console.log(usuario)}
+                        <Registro usuario={usuario} />
                     </li>)
                 )}  
             </ul>    
