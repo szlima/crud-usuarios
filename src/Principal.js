@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, createContext} from 'react';
 
 import './css/Principal.css';
 
@@ -6,9 +6,14 @@ import Cabecalho from './componentes/Cabecalho';
 import FichaCadastro from './componentes/FichaCadastro';
 import Listagem from './componentes/Listagem';
 
+export const Contexto= createContext();
+
 function Principal() {
 
     const [registros, setRegistros]= useState([]);
+
+    const [btnCadastrar, setBtnCadastrar]= useState(true);
+    const [indiceRegistro, setIndiceRegistro]= useState('');
 
     const [usuario, setUsuario]= useState('');
     const [nome, setNome]= useState('');
@@ -38,7 +43,10 @@ function Principal() {
         setCidade('');
         setCep('');
         setTelefone('');
-        setEmpresa('');     
+        setEmpresa('');   
+        
+        setIndiceRegistro('');
+        setBtnCadastrar(true);
     };
 
     const cadastrar= () => {
@@ -63,16 +71,34 @@ function Principal() {
         recomecar();   
     };
 
+    const selecionar= indice => {
+
+        setIndiceRegistro(indice);
+        const usuario= registros[indice];
+    
+        setUsuario(usuario.username);
+        setNome(usuario.name);
+        setEmail(usuario.email);
+        setRua(usuario.address.street);
+        setNumero(usuario.address.suite);
+        setCidade(usuario.address.city);
+        setCep(usuario.address.zipcode);
+        setTelefone(usuario.phone);
+        setEmpresa(usuario.company.name);
+    
+        setBtnCadastrar(false);
+    };
+
     useEffect(() => {
         carregarDados();
     }, []);
 
     return (
-        <React.Fragment>            
+        <Contexto.Provider value={{selecionar}}>          
             <Cabecalho />
 
             <main>
-                <FichaCadastro cadastrar={cadastrar}
+                <FichaCadastro cadastrar={cadastrar} btnCadastrar={btnCadastrar}
                     setUsuario={setUsuario} setNome={setNome} setEmail={setEmail} 
                     setRua={setRua} setNumero={setNumero} setCidade={setCidade}
                     setCep={setCep} setTelefone={setTelefone} setEmpresa={setEmpresa}
@@ -82,7 +108,7 @@ function Principal() {
                 />
                 <Listagem registros={registros} />
             </main>
-        </React.Fragment>
+        </Contexto.Provider>
     );
 }
 

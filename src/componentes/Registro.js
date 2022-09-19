@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
 import '../css/Registro.css';
 
-function Registro({usuario}){
+import {Contexto} from '../Principal';
+
+function Registro({usuario, indice}){
+
+    const {selecionar}= useContext(Contexto);
 
     return(
-        <div className='registro'>
+        <div className='registro' onClick={() => selecionar(indice)}>
             <p className='username'>@{usuario.username}</p>
             <p><span>{usuario.name}</span>-<span>{usuario.email}</span></p>
         

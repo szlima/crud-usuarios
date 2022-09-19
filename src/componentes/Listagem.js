@@ -15,7 +15,7 @@ function Listagem({registros}){
             <ul className='registros'>
                 {registros.map((usuario, indice) => 
                     (<li key={indice}>
-                        <Registro usuario={usuario} />
+                        <Registro usuario={usuario} indice={indice} />
                     </li>)
                 )}  
             </ul>    
