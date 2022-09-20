@@ -99,6 +99,7 @@ function Principal() {
 
             <main>
                 <FichaCadastro cadastrar={cadastrar} btnCadastrar={btnCadastrar}
+                    cancelar={recomecar} 
                     setUsuario={setUsuario} setNome={setNome} setEmail={setEmail} 
                     setRua={setRua} setNumero={setNumero} setCidade={setCidade}
                     setCep={setCep} setTelefone={setTelefone} setEmpresa={setEmpresa}
