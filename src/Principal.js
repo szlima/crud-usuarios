@@ -89,6 +89,31 @@ function Principal() {
         setBtnCadastrar(false);
     };
 
+    const editar= () => {
+
+        const atualizacao= {
+            'username': usuario,
+            'name': nome,
+            'email': email,
+            'address': {
+                'street': rua,
+                'suite': numero,
+                'city': cidade,
+                'zipcode': cep
+            },
+            'phone': telefone,
+            'company': {
+                'name': empresa
+            }    
+        };
+    
+        let copiaRegistros= [...registros];
+        copiaRegistros.splice(indiceRegistro, 1, atualizacao);
+        setRegistros(copiaRegistros);
+    
+        recomecar();
+    };
+
     useEffect(() => {
         carregarDados();
     }, []);
@@ -99,7 +124,7 @@ function Principal() {
 
             <main>
                 <FichaCadastro cadastrar={cadastrar} btnCadastrar={btnCadastrar}
-                    cancelar={recomecar} 
+                    editar={editar} cancelar={recomecar} 
                     setUsuario={setUsuario} setNome={setNome} setEmail={setEmail} 
                     setRua={setRua} setNumero={setNumero} setCidade={setCidade}
                     setCep={setCep} setTelefone={setTelefone} setEmpresa={setEmpresa}

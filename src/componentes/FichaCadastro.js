@@ -2,7 +2,7 @@ import React from 'react';
 
 import '../css/FichaCadastro.css';
 
-function FichaCadastro({cadastrar, btnCadastrar, cancelar,
+function FichaCadastro({cadastrar, btnCadastrar, editar, cancelar,
     setUsuario, setNome, setEmail, setRua, setNumero, setCidade, setCep, setTelefone, setEmpresa, 
     usuario, nome, email, rua, numero, cidade, cep, telefone, empresa}){
 
@@ -63,7 +63,7 @@ function FichaCadastro({cadastrar, btnCadastrar, cancelar,
                 <input type='button' value='Cadastrar' className='btn btn-primary form-control' onClick={cadastrar}/>
                 :
                 <div className='d-flex'>
-                    <input type='button' value='Editar' className='btn btn-success form-control'/>
+                    <input type='button' value='Editar' className='btn btn-success form-control' onClick={editar}/>
                     <input type='button' value='Excluir' className='btn btn-danger form-control'/>
                     <input type='button' value='Cancelar' className='btn btn-outline-light form-control' onClick={cancelar}/>
                 </div>                
