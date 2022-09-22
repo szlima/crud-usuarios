@@ -114,6 +114,15 @@ function Principal() {
         recomecar();
     };
 
+    const excluir= () => {
+
+        let copiaRegistros= [...registros];
+        copiaRegistros.splice(indiceRegistro, 1);
+        setRegistros(copiaRegistros);
+    
+        recomecar();
+    };
+
     useEffect(() => {
         carregarDados();
     }, []);
@@ -124,7 +133,7 @@ function Principal() {
 
             <main>
                 <FichaCadastro cadastrar={cadastrar} btnCadastrar={btnCadastrar}
-                    editar={editar} cancelar={recomecar} 
+                    editar={editar} excluir={excluir} cancelar={recomecar} 
                     setUsuario={setUsuario} setNome={setNome} setEmail={setEmail} 
                     setRua={setRua} setNumero={setNumero} setCidade={setCidade}
                     setCep={setCep} setTelefone={setTelefone} setEmpresa={setEmpresa}
