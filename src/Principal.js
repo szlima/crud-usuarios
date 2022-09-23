@@ -1,4 +1,4 @@
-import React, {useState, useEffect, createContext} from 'react';
+import React, {useState, useEffect, createContext, useMemo} from 'react';
 
 import './css/Principal.css';
 
@@ -127,6 +127,10 @@ function Principal() {
         carregarDados();
     }, []);
 
+    const listarRegistros= useMemo(() => 
+        <Listagem registros={registros}/>,
+        [registros]);
+
     return (
         <Contexto.Provider value={{selecionar}}>          
             <Cabecalho />
@@ -141,7 +145,7 @@ function Principal() {
                     numero={numero} cidade={cidade} cep={cep} 
                     telefone={telefone} empresa={empresa}
                 />
-                <Listagem registros={registros} />
+                {listarRegistros}
             </main>
         </Contexto.Provider>
     );
