@@ -15,3 +15,12 @@ p{
     list-style: none;
     padding: 0;
 }
+
+.pesquisa{
+    margin-bottom: 10px;    
+    text-align: right;
+
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid rgb(107, 114, 126);
+}
