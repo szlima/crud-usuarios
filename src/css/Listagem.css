@@ -10,7 +10,7 @@ p{
 }
 
 .registros{
-    height: 85%;
+    height: 80%;
     overflow: scroll;
     list-style: none;
     padding: 0;
